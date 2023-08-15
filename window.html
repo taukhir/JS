@@ -1,0 +1,67 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <br /><br /><br />
+    <h5>Window Object Sample</h5>
+    <input type="button" value="Window" onclick="openGoogleWindow()" />
+
+    <br /><br />
+    <h5>Location Object</h5>
+    <p id="demo"></p>
+    <input type="button" value="Show info" onclick="showLocationObject()">
+
+    <br><br>
+    <h5>History Object</h5>
+    <p id="historyLength"></p>
+    <input type="button" value="Backward" onclick="back()">
+    <input type="button" value="Forward" onclick="after()">
+    <input type="button" value="History Length" onclick="showHistoryLength()">
+
+    <br><br><br>
+    <h4>Navigator Object</h4>
+    <p id="navigatorInfo"></p>
+    <input type="button" value="Show Navigator Info" onclick="navigatorInfo()">
+
+    <br><br><br>
+    <h4>Screen Object</h4>
+    <p id="screenInfo"></p>
+    <input type="button" value="Screen Info" onclick="screenInfo()">
+
+    <script>
+      function showLocationObject() {
+        let locationObject = window.location;
+        document.getElementById("demo").innerHTML = `Location Details : ${locationObject} <br>Protocol : ${locationObject.protocol} <br>Port : ${locationObject.port}`;
+      }
+
+      function openGoogleWindow() {
+        window.open("http://www.google.com");
+      }
+
+      function back(){
+        window.history.back();
+      }
+
+      function after() {
+        window.history.forward();
+      }
+
+      function showHistoryLength(){
+        document.getElementById("historyLength").innerHTML = window.history.length;
+      }
+
+      function navigatorInfo(){
+        document.getElementById("navigatorInfo").innerHTML = `AppName : ${navigator.appName} <br>Application Version : ${navigator.appVersion} <br>Platform : ${navigator.platform} <br>`;
+      }
+
+      function screenInfo(){
+        document.getElementById("screenInfo").innerHTML = `Height : ${window.screen.height} <br>Width : ${window.screen.width} <br>Color : ${window.screen.colorDepth} <br>`;
+      }
+
+    </script>
+  </body>
+</html>
